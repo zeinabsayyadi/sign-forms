@@ -1,7 +1,7 @@
 import { SignUpFormSchema } from "@/components/validation/formsYupValidation";
 import { useFormik } from "formik";
 import Link from "next/link";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 interface ISignInForm {
   username: string;
@@ -11,31 +11,7 @@ interface ISignInForm {
   confirmPassword: string;
 }
 
-interface IFormStatus {
-  message: string;
-  type: string;
-}
-
-interface IFormStatusProps {
-  [key: string]: IFormStatus;
-}
-
-const formstatusProps: IFormStatusProps = {
-  success: {
-    message: `welcome back!`,
-    type: "success",
-  },
-  error: {
-    message: `something went wrong please try again`,
-    type: "error",
-  },
-};
 const SignUp: FC = () => {
-  const [fomrStatus, setFormStatus] = useState<IFormStatus>({
-    message: "",
-    type: "",
-  });
-
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       validationSchema: SignUpFormSchema,
