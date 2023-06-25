@@ -7,7 +7,7 @@ const passwordRegExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
 //validate properties
 const username = yup.string().required().min(3).max(20);
-const email = yup.string().email();
+const email = yup.string().email().required();
 const phone = yup
   .string()
   .matches(phoneRegExp, "phone must be a valid phone number")
