@@ -9,7 +9,7 @@ const passwordRegExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 const username = yup.string().required().min(3).max(20);
 const email = yup.string().email();
 const phone = yup.string().matches(phoneRegExp).required();
-const password = yup.string().required().min(8);
+const password = yup.string().matches(passwordRegExp).required().min(8);
 const confirmPassword = yup
   .string()
   .oneOf([yup.ref("password")])
