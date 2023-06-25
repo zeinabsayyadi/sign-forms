@@ -81,6 +81,12 @@ const SignUp: FC = () => {
                         className="relative mb-4"
                         data-te-input-wrapper-init
                       >
+                        <label
+                          htmlFor="exampleFormControlInputusername"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >
+                          username
+                        </label>
                         <input
                           name="username"
                           onBlur={handleBlur}
@@ -88,19 +94,15 @@ const SignUp: FC = () => {
                           value={values.username}
                           onChange={handleChange}
                           type="text"
-                          className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500"
                           id="exampleFormControlInputusername"
                           //placeholder="username"
                         />
-                        <label
-                          htmlFor="exampleFormControlInputusername"
-                          className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >
-                          username
-                        </label>
                       </div>
                       {touched.username && errors.username && (
-                        <pre>{errors.username}</pre>
+                        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                          {errors.username}
+                        </p>
                       )}
 
                       {/* email input */}
@@ -108,24 +110,27 @@ const SignUp: FC = () => {
                         className="relative mb-4"
                         data-te-input-wrapper-init
                       >
+                        <label
+                          htmlFor="exampleFormControlInputemail"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >
+                          email
+                        </label>
+
                         <input
                           type="email"
                           name="email"
                           onBlur={handleBlur}
                           value={values.email}
                           onChange={handleChange}
-                          className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500"
                           id="exampleFormControlInputemail"
                         />
-                        <label
-                          htmlFor="exampleFormControlInputemail"
-                          className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >
-                          email
-                        </label>
                       </div>
                       {touched.email && errors.email && (
-                        <pre>{errors.email}</pre>
+                        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                          {errors.email}
+                        </p>
                       )}
 
                       {/* phone input */}
@@ -133,24 +138,26 @@ const SignUp: FC = () => {
                         className="relative mb-4"
                         data-te-input-wrapper-init
                       >
+                        <label
+                          htmlFor="exampleFormControlInputphone"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >
+                          phone
+                        </label>
                         <input
                           type="text"
                           name="phone"
                           onBlur={handleBlur}
                           value={values.phone}
                           onChange={handleChange}
-                          className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500"
                           id="exampleFormControlInputphone"
                         />
-                        <label
-                          htmlFor="exampleFormControlInputphone"
-                          className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >
-                          phone
-                        </label>
                       </div>
                       {touched.phone && errors.phone && (
-                        <pre>{errors.phone}</pre>
+                        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                          {errors.phone}
+                        </p>
                       )}
 
                       {/* Password input */}
@@ -158,24 +165,26 @@ const SignUp: FC = () => {
                         className="relative mb-4"
                         data-te-input-wrapper-init
                       >
+                        <label
+                          htmlFor="exampleFormControlInputpassword"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >
+                          password
+                        </label>
                         <input
                           name="password"
                           onBlur={handleBlur}
                           value={values.password}
                           onChange={handleChange}
                           type="password"
-                          className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-100"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500"
                           id="exampleFormControlInputpassword"
                         />
-                        <label
-                          htmlFor="exampleFormControlInputpassword"
-                          className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >
-                          password
-                        </label>
                       </div>
                       {touched.password && errors.password && (
-                        <pre>{errors.password}</pre>
+                        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                          {errors.password}
+                        </p>
                       )}
 
                       {/* confrim Password input */}
@@ -183,29 +192,31 @@ const SignUp: FC = () => {
                         className="relative mb-4"
                         data-te-input-wrapper-init
                       >
+                        <label
+                          htmlFor="exampleFormControlInputconfirmpassword"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >
+                          confirm password
+                        </label>
                         <input
                           name="confirmPassword"
                           onBlur={handleBlur}
                           value={values.confirmPassword}
                           onChange={handleChange}
                           type="password"
-                          className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-100"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500"
                           id="exampleFormControlInputconfirmpassword"
                           //placeholder="Password"
                         />
-                        <label
-                          htmlFor="exampleFormControlInputconfirmpassword"
-                          className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                        >
-                          confirm password
-                        </label>
                       </div>
                       {touched.confirmPassword && errors.confirmPassword && (
-                        <pre>{errors.confirmPassword}</pre>
+                        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                          {errors.confirmPassword}
+                        </p>
                       )}
 
                       {/* Submit button */}
-                      <div className="mb-12 pb-1 pt-1 text-center">
+                      <div className="mb-12 mt-3 pb-1 pt-1 text-center">
                         <button
                           className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
                           type="submit"

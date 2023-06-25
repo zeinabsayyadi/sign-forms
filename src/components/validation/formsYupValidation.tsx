@@ -8,12 +8,15 @@ const passwordRegExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 //validate properties
 const username = yup.string().required().min(3).max(20);
 const email = yup.string().email();
-const phone = yup.string().matches(phoneRegExp).required();
+const phone = yup
+  .string()
+  .matches(phoneRegExp, "phone must be a valid phone number")
+  .required();
 const password = yup
   .string()
   .matches(
     passwordRegExp,
-    "password must contain at least a uppercase, a lowercase, a number and a especial character"
+    "password must contain at least an uppercase, a lowercase, a number and an especial character"
   )
   .required()
   .min(8);
