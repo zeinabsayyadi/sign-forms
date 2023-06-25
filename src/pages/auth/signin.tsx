@@ -5,10 +5,10 @@ import { FC, useState } from "react";
 
 interface ISignInForm {
   username: string;
-  //email: string;
-  //phone: string;
+  email: string;
+  phone: string;
   password: string;
-  //confirmPassword: string;
+  confirmPassword: string;
 }
 
 interface IFormStatus {
@@ -41,7 +41,10 @@ const SignIn: FC = () => {
       validationSchema: SginInFormSchema,
       initialValues: {
         username: "",
+        email: "",
+        phone: "",
         password: "",
+        confirmPassword: "",
       },
       onSubmit: (values: ISignInForm) => {
         console.log("validation success✅");
@@ -73,8 +76,6 @@ const SignIn: FC = () => {
                     </div>
 
                     <form onSubmit={handleSubmit}>
-                      <p className="mb-4">Please login to your account</p>
-
                       {/* username input */}
                       <div
                         className="relative mb-4"
@@ -83,8 +84,7 @@ const SignIn: FC = () => {
                         <input
                           name="username"
                           onBlur={handleBlur}
-                          onFocus={()=>console.log('focuse')}
-                          
+                          onFocus={() => console.log("focuse")}
                           value={values.username}
                           onChange={handleChange}
                           type="text"
@@ -132,7 +132,7 @@ const SignIn: FC = () => {
                       <div className="mb-12 pb-1 pt-1 text-center">
                         <button
                           className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
-                          type="button"
+                          type="submit"
                           data-te-ripple-init
                           data-te-ripple-color="light"
                           style={{
@@ -188,61 +188,6 @@ const SignIn: FC = () => {
         </div>
       </div>
     </section>
-    // <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-    //   <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-    //     <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
-    //       Sign in
-    //     </h1>
-    //     <form className="mt-6">
-    //       <div className="mb-2">
-    //         <label
-    //           htmlFor="email"
-    //           className="block text-sm font-semibold text-gray-800"
-    //         >
-    //           Email
-    //         </label>
-    //         <input
-    //           type="email"
-    //           className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-    //         />
-    //       </div>
-    //       <div className="mb-2">
-    //         <label
-    //           htmlFor="password"
-    //           className="block text-sm font-semibold text-gray-800"
-    //         >
-    //           Password
-    //         </label>
-    //         <input
-    //           type="password"
-    //           className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-    //         />
-    //       </div>
-    //       <a
-    //         href="#"
-    //         className="text-xs text-purple-600 hover:underline"
-    //       >
-    //         Forget Password?
-    //       </a>
-    //       <div className="mt-6">
-    //         <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
-    //           Login
-    //         </button>
-    //       </div>
-    //     </form>
-
-    //     <p className="mt-8 text-xs font-light text-center text-gray-700">
-    //       {" "}
-    //       Don't have an account?{" "}
-    //       <a
-    //         href="#"
-    //         className="font-medium text-purple-600 hover:underline"
-    //       >
-    //         Sign up
-    //       </a>
-    //     </p>
-    //   </div>
-    // </div>
   );
 };
 export default SignIn;
